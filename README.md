@@ -7,6 +7,8 @@ A CLI tool to organize your photos and video from a DSLR camera.
 npm install orgainize-raw -g
 ```
 
+## Use
+Run the command `organize-raw` in the directory with the photos you'd like to organize.
 
 ## Contributing
 1. Fork it
