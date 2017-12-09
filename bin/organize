@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+'use strict';
+const fs = require('fs');
+const mv = require('mv');
+const raw = './raw';
+const video = './video';
+
+fs.readdir('./', (err, files) => {
+
+  // find each file in the directory
+  files.forEach(file => {
+    //console.log(file);
+    const fileType = file.split('.')[1];
+    
+    // if CR2 file type move to raw directory
+    if (fileType === 'CR2') {
+
+      // if raw directory doesn't exist create one
+      if (!fs.existsSync(raw)){
+        fs.mkdirSync(raw);
+      }
+
+      // move any CR2 file to raw directory
+      mv(file, `raw/${file}`, function(err) {
+        if(err) {
+          console.log(err);
+        }
+      });
+    }else if (fileType === 'MP4') {
+      // if video directory doesn't exist create one
+      if (!fs.existsSync(video)){
+        fs.mkdirSync(video);
+      }
+
+      // move any MP4 file to video directory
+      mv(file, `video/${file}`, function(err) {
+        if(err) {
+          console.log(err);
+        }
+      });
+    }
+  });
+
+  // success message
+  console.log('Files have been organized');
+})

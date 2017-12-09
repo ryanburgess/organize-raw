@@ -1,0 +1,37 @@
+{
+  "name": "organize-raw",
+  "version": "1.0.0",
+  "description": "A CLI tool to organize your photos and video from a DSLR camera.",
+  "main": "bin/organize",
+  "dependencies": {
+    "mv": "^2.1.1",
+    "moment": "^2.19.1"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "organize-raw": "./bin/organize"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanburgess/organize-raw.git"
+  },
+  "keywords": [
+    "organize",
+    "photos",
+    "video",
+    "raw",
+    "cr2",
+    "dslr",
+    "camera"
+  ],
+  "author": "Ryan Burgess",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanburgess/organize-raw/issues"
+  },
+  "homepage": "https://github.com/ryanburgess/organize-raw#readme"
+}
