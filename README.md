@@ -1,6 +1,8 @@
 # Organize Photos and Video
 A CLI tool to organize your photos and video from a DSLR camera.
 
+The organize-raw script creates a video and raw folder in a directory to move all MP4 and CR2 files into the correct folder.
+
 ## Install
 
 ```js
