@@ -6,7 +6,7 @@ The organize-raw script creates a video and raw folder in a directory to move al
 ## Install
 
 ```js
-npm install orgainize-raw -g
+npm install organize-raw -g
 ```
 
 ## Use
