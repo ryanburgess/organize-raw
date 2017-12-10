@@ -5,6 +5,23 @@ const mv = require('mv');
 const raw = './raw';
 const video = './video';
 
+// a function to move a file to a new directory
+function moveFile (filePassed, dest) {
+  // move the file to the destination directory
+  mv(filePassed, `${dest}/${filePassed}`, function(err) {
+    if(err) {
+      console.log(err);
+    }
+  });
+}
+
+// a function to check to see if a directory exists. If it doesn't create one.
+function dirCheck (dir) {
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
+}
+
 fs.readdir('./', (err, files) => {
 
   // find each file in the directory
@@ -13,31 +30,19 @@ fs.readdir('./', (err, files) => {
     const fileType = file.split('.')[1];
     
     // if CR2 file type move to raw directory
-    if (fileType === 'CR2') {
+    if (fileType === 'json') {
 
       // if raw directory doesn't exist create one
-      if (!fs.existsSync(raw)){
-        fs.mkdirSync(raw);
-      }
+      dirCheck ('raw');
 
       // move any CR2 file to raw directory
-      mv(file, `raw/${file}`, function(err) {
-        if(err) {
-          console.log(err);
-        }
-      });
+      moveFile (file, 'raw');
     }else if (fileType === 'MP4') {
       // if video directory doesn't exist create one
-      if (!fs.existsSync(video)){
-        fs.mkdirSync(video);
-      }
+      dirCheck ('video');
 
       // move any MP4 file to video directory
-      mv(file, `video/${file}`, function(err) {
-        if(err) {
-          console.log(err);
-        }
-      });
+      moveFile (file, 'video');
     }
   });
 
