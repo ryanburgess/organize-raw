@@ -30,7 +30,7 @@ fs.readdir('./', (err, files) => {
     const fileType = file.split('.')[1];
     
     // if CR2 file type move to raw directory
-    if (fileType === 'json') {
+    if (fileType === 'CR2') {
 
       // if raw directory doesn't exist create one
       dirCheck ('raw');
