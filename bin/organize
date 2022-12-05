@@ -13,7 +13,7 @@ fs.readdir('./', (err, files) => {
     const fileType = file.split('.')[1];
     
     // if CR2 file type move to raw directory
-    if (fileType === 'CR2' || fileType === 'xmp') {
+    if (fileType === 'CR2' || fileType === 'xmp' || fileType === 'DNG' || fileType === 'CRW' || fileType === 'CR3' || fileType === 'ERF' || fileType === 'NRW' || fileType === 'NEF' || fileType === 'TIFF' || fileType === 'ORF' || fileType === 'ARW' || fileType === 'SRF' || fileType === 'SR2') {
 
       // if raw directory doesn't exist create one
       if (!fs.existsSync(raw)){
