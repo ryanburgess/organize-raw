@@ -33,7 +33,7 @@ fs.readdir('./', (err, files) => {
       }
 
       // move any MP4 file to video directory
-      mv(file, `video/${file}`, function(err) {
+      mv(file, `video-raw/${file}`, function(err) {
         if(err) {
           console.log(err);
         }
