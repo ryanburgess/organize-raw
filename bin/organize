@@ -3,7 +3,7 @@
 const fs = require('fs');
 const mv = require('mv');
 const raw = './raw';
-const video = './video';
+const video = './video-raw';
 
 fs.readdir('./', (err, files) => {
 
@@ -26,7 +26,7 @@ fs.readdir('./', (err, files) => {
           console.log(err);
         }
       });
-    }else if (fileType === 'MP4' || fileType === 'MOV') {
+    }else if (fileType === 'MP4' || fileType === 'MOV' || fileType === 'LRF' || fileType === 'SRT') {
       // if video directory doesn't exist create one
       if (!fs.existsSync(video)){
         fs.mkdirSync(video);
