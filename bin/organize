@@ -5,6 +5,12 @@ const mv = require('mv');
 const raw = './raw';
 const video = './video-raw';
 
+// photo raw file extensions
+const rawPhoto = ['CR2', 'xmp', 'DNG', 'CRW', 'SR2', 'SRF', 'ARW', 'TIFF', 'ORF', 'NEF', 'NRW', 'PEF', 'RW2'];
+
+// video raw file extensions
+const rawVideo = ['MP4', 'MOV', 'SRT', 'LRF'];
+
 fs.readdir('./', (err, files) => {
 
   // find each file in the directory
@@ -13,7 +19,7 @@ fs.readdir('./', (err, files) => {
     const fileType = file.split('.')[1];
     
     // if CR2 file type move to raw directory
-    if (fileType === 'CR2' || fileType === 'xmp') {
+    if(rawPhoto.includes(fileType)) {
 
       // if raw directory doesn't exist create one
       if (!fs.existsSync(raw)){
@@ -26,7 +32,7 @@ fs.readdir('./', (err, files) => {
           console.log(err);
         }
       });
-    }else if (fileType === 'MP4' || fileType === 'MOV' || fileType === 'LRF' || fileType === 'SRT') {
+    }else if(rawVideo.includes(fileType)) {
       // if video directory doesn't exist create one
       if (!fs.existsSync(video)){
         fs.mkdirSync(video);
