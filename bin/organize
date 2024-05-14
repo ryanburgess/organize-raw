@@ -6,7 +6,7 @@ const raw = './raw';
 const video = './video-raw';
 
 // photo raw file extensions
-const rawPhoto = ['CR2', 'xmp', 'DNG', 'CRW', 'SR2', 'SRF', 'ARW', 'TIFF', 'ORF', 'NEF', 'NRW', 'PEF', 'RW2'];
+const rawPhoto = ['CR3', 'CR2', 'CR1', 'xmp', 'DNG', 'CRW', 'SR2', 'SRF', 'ARW', 'TIFF', 'ORF', 'NEF', 'NRW', 'PEF', 'RW2'];
 
 // video raw file extensions
 const rawVideo = ['MP4', 'MOV', 'SRT', 'LRF'];
